@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EDA - Structure e-sport VALORANT</title>
+  <style>
+    /* Réinitialisation des marges et des rembourrages */
+    body, h1, h2, h3, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Styles généraux */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      background-color: #0e0e0e;
+      color: #ffffff;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #000000;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    nav h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #333333;
+    }
+
+    /* Contenu */
+    section {
+      padding: 50px;
+      margin-top: 180px;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    img {
+      max-width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Pied de page */
+    footer {
+      background-color: #000000;
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    footer p {
+      color: #ffffff;
+    }
+
+    /* Ajoutez le CSS personnalisé ici */
+
+    .team-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .player {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .player-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    .player:hover .player-name {
+      color: #ff0000;
+    }
+
+    .player-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .player.active .player-content {
+      max-height: 1000px;
+      margin-top: 20px;
+    }
+
+    .agent-image {
+      width: 80%;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .player.active .agent-image {
+      opacity: 1;
+    }
+
+    .player-info {
+      margin-top: 10px;
+    }
+
+    /* Media queries pour une meilleure expérience mobile */
+    @media screen and (max-width: 768px) {
+      h2 {
+        font-size: 24px;
+      }
+
+      .agent-image {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>EDA - Structure e-sport VALORANT</h1>
+    <a href="#team">Équipe</a>
+    <a href="#about">À propos</a>
+  </nav>
+
+  <section id="team">
+    <h2>Présentation de l'équipe</h2>
+    <ul class="team-list">
+      <li>
+        <div class="player" onclick="togglePlayer(this)">
+          <span class="player-name">Doggo</span>
+          <div class="player-content">
+            <img class="agent-image" src="Images/Fade.png" alt="Fade">
+            <div class="player-info">
+              <p>bark</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="player" onclick="togglePlayer(this)">
+          <span class="player-name">Kaamy</span>
+          <div class="player-content">
+            <img class="agent-image" src="Images/Reyna.png" alt="Reyna">
+            <div class="player-info">
+              <p>Il aime violet evergarden</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="player" onclick="togglePlayer(this)">
+          <span class="player-name">Mélo</span>
+          <div class="player-content">
+            <img class="agent-image" src="Images/Sage.png" alt="Sage">
+            <div class="player-info">
+              <p>Radiant au piano</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="player" onclick="togglePlayer(this)">
+          <span class="player-name">Yashii</span>
+          <div class="player-content">
+            <img class="agent-image" src="Images/Raze.png" alt="Raze">
+            <div class="player-info">
+              <p>Banane fromage</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="player" onclick="togglePlayer(this)">
+          <span class="player-name">Léon</span>
+          <div class="player-content">
+            <img class="agent-image" src="Images/Chamber.png" alt="Chamber">
+            <div class="player-info">
+              <p>léon.</p>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>À propos de nous</h2>
+    <p>Suivez-nous sur Instagram : @eda_valorant.</p>
+    <p><p>
+    <p>Highlights:</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FP7iibIh5ho" frameborder="0" allowfullscreen></iframe> 
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CsPcG4CPetz/?hl=fr" data-instgrm-version="13"></blockquote>
+    <script async src="https://www.instagram.com/embed.js"></script>
+  </section>
+
+  <footer>
+    <p>© 2023 EDA. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    function togglePlayer(player) {
+      player.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
